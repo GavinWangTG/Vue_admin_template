@@ -1,0 +1,227 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: $text-color-primary;
+    min-width: $mini-width;
+}
+
+body {
+    font-size: 14px;
+}
+
+.app-loading {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    background: #fff url(../images/im_loading.svg) no-repeat center;
+    background-size: 130px;
+}
+
+//左侧导航
+.sidebar-container {
+    width: $sideBar-max-width !important;
+    background-color: $web-theme-color;
+    transition: width .3s;
+    @include box-shadow-default();
+
+    .logo {
+        width: 100%;
+        height: $navBar-height;
+        display: flex;
+        align-items: center;
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: $navBar-logo;
+        }
+    }
+
+    .sidebar-fold {
+        height: $sidebar-fold-height;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #ffffff !important;
+
+        .iconfont {
+            transition: .3s;
+            transform: rotate(0deg);
+        }
+    }
+
+    .sidebar-wrapper {
+        width: $sideBar-max-width !important;
+        height: calc(100vh - #{$navBar-height} - #{$sidebar-fold-height});
+    }
+    &.mini{
+        width: $sideBar-min-width !important;
+
+        .sidebar-wrapper{
+            width: $sideBar-min-width !important;
+        }
+        .sidebar-fold .iconfont{
+            transform: rotate(90deg);
+        }
+    }
+
+    .el-menu-item {
+        color: $sideBar-color;
+        transition: .3s;
+
+        .iconfont {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            margin-top: -3px;
+            color: $sideBar-color;
+            transition: .3s;
+            font-size: 18px;
+            width: 24px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        span {
+            margin-left: 8px;
+        }
+
+        &.is-active {
+            background-color: $sideBar-cur-background-color !important;
+            color: $web-theme-color;
+
+            .iconfont {
+                color: $--color-primary;
+            }
+        }
+
+        &:hover {
+            background-color: #f4f4f4 !important;
+            color: $--color-primary;
+
+            .iconfont {
+                color: $--color-primary;
+            }
+        }
+    }
+
+    .el-submenu__title {
+        color: $sideBar-color;
+
+        span {
+            margin-left: 10px
+        }
+
+        i {
+            color: $sideBar-color;
+            display: inline-block;
+            width: 24px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .iconfont{
+            position: relative;
+            top: -2px;
+        }
+        &:hover {
+            background-color: #f4f4f4 !important;
+            color: $--color-primary;
+
+            .iconfont,i {
+                color: $--color-primary;
+            }
+        }
+    }
+    .el-submenu{
+        &.is-active:not(.is-opened){
+            background-color: $sideBar-cur-background-color !important;
+            color: $--color-primary;
+
+            .iconfont,i,.el-submenu__title {
+                color: $--color-primary;
+            }
+        }
+    }
+}
+
+.el-main{
+   height: calc(100vh - #{$navBar-height}) !important; 
+}
+.sideBar-submenu>.el-menu {
+    background-color: #fff !important;
+}
+
+//顶部导航
+.nav-container {
+    position: relative;
+    background-color: $navBar-backgound-color;
+    box-sizing: border-box;
+    transition: left .3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include box-shadow-default();
+}
+
+//导航面包屑
+.nav-top-breadcrumb {
+    
+}
+
+.nav-top-actions {
+    display: flex;
+    align-items: center;
+
+    .user-info {
+        font-size: 12px;
+        color: #97a8be;
+        margin-right: 15px;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    p:nth-child(2n) {
+        margin-top: 5px;
+    }
+}
+
+//router transition
+
+/*fade*/
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.28s;
+}
+
+.fade-enter,
+.fade-leave-active {
+    opacity: 0;
+}
+
+/*fade*/
+.breadcrumb-enter-active,
+.breadcrumb-leave-active {
+    transition: all .5s;
+}
+
+.breadcrumb-enter,
+.breadcrumb-leave-active {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.breadcrumb-move {
+    transition: all .5s;
+}
+
+.breadcrumb-leave-active {
+    position: absolute;
+}

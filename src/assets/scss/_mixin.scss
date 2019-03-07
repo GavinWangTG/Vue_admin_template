@@ -1,0 +1,33 @@
+
+@mixin clearfix{
+    clear:both;
+    content: " ";
+    display:table;
+}
+
+@mixin overflow-1row{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+@mixin overflow-2row{
+    display:-webkit-box;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    word-break:break-all; 
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+}
+@mixin highlight{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+@mixin default-input{
+    border:0;
+    outline:none;
+    -webkit-appearance:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+@mixin box-shadow-default{
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}

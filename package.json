@@ -7,7 +7,13 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "element-ui": "^2.5.4",
+    "moment": "^2.24.0",
+    "nprogress": "^0.2.0",
     "vue": "^2.6.6",
+    "vue-cropper": "^0.4.8",
+    "vue-lazyload": "^1.2.6",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },

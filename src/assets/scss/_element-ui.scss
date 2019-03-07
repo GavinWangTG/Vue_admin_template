@@ -1,0 +1,45 @@
+
+/* 改变主题色变量 */
+$--color-primary: $web-theme-color;
+
+$--color-success: #01D264;
+$--color-warning: #FF9145;
+$--color-danger: #FF595C;
+//$--color-info: #FF595C !default;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+
+// reset element-ui default css
+.el-table {
+	width: 100%;
+
+	th{
+		padding: 3px 0;
+		background-color: #f6f6f6;
+	}
+}
+
+.el-loading-mask {
+	//height: calc(100vh - 104px);
+    min-height: 500px;
+	svg {
+		display: none;
+		visibility: hidden;
+	}
+	.el-loading-spinner {
+		margin-top: -90px;
+
+		&:after {
+			display: inline-block;
+			content: "";
+			width: 130px;
+			height: 130px;
+			z-index: 1996;
+			background: rgba(255, 255, 255, 0.75) url('../images/im_loading.svg') no-repeat center / 130px 130px;
+		}
+	}
+}
